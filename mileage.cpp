@@ -13,10 +13,9 @@ public:
     double get_current_mpg();
 };
 
-void Mpg_log::Mpg_log(double starting_odometer)
+Mpg_log::Mpg_log(double starting_odometer)
 {
     last_odometer = starting_odometer;
-    
 }
 
 void Mpg_log::buy_gas(double odometer, double gas)
@@ -30,10 +29,8 @@ double Mpg_log::get_current_mpg()
     
     double result;
     result = (this_odometer - last_odometer) / this_gas;
-    
+    last_odometer = this_odometer;
     return result;
-    
-    
 }
 int main(){
     double starting_odometer,odometer,gas;
